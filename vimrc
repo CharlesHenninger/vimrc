@@ -7,7 +7,6 @@
 " F1 : Nerdtree (file tree)
 " F2 : Undotree (change log and state saver)
 " F3 : Tag manager
-" F4 : git in vim
 "
 " Ctrl-w twice to switch focus
 "
@@ -29,9 +28,6 @@ call plug#begin()
 Plug 'sainnhe/everforest'
 Plug 'morhetz/gruvbox'
 
-"  tabline
-Plug 'vim-airline/vim-airline'
-
 " alignment
 Plug 'godlygeek/tabular'
 
@@ -46,10 +42,7 @@ Plug 'scrooloose/NERDTree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'jreybert/vimagit', { 'on': 'Magit'  }
 
-" linting
-Plug 'w0rp/ale'
 " typing
 Plug 'jiangmiao/auto-pairs'  " auto-complete [], {}, () etc.
 
@@ -121,7 +114,6 @@ set bs=2
 nnoremap <F1> :NERDTreeToggle<cr>
 nnoremap <F2> :UndotreeToggle<cr>
 nmap <F3> :TagbarToggle<cr>
-nnoremap <F4> :Magit<cr>
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>
 
@@ -132,13 +124,6 @@ vnoremap > >gv
 " nerdtree
 let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore = ['\.pyc$','__pycache','\.swo']
-
-" airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-
-" ale
-let g:ale_set_quickfix = 1
 
 " visual bell
 autocmd GUIEnter * set vb t_vb= " for your GUI
